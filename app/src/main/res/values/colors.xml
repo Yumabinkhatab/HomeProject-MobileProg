@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Palet warna sesuai desain Oppi -->
+    <color name="oppi_primary">#4A6CF7</color>
+    <color name="oppi_primary_dark">#3651D4</color>
+    <color name="oppi_lavender">#E4E8FF</color>
+    <color name="oppi_lavender_soft">#F1F3FF</color>
+    <color name="oppi_gray">#9AA1B9</color>
+    <color name="oppi_peach">#FFD8A8</color>
+    <color name="oppi_cream">#FFF1C9</color>
+    <color name="oppi_green">#2DD4A0</color>
+    <color name="oppi_mint">#E6F9F1</color>
+    <color name="oppi_orange">#FF8A3D</color>
+    <color name="oppi_red">#F05252</color>
+
+    <color name="oppi_bg">#F6F7FB</color>
+    <color name="oppi_card">#FFFFFF</color>
+    <color name="oppi_border">#E3E6F0</color>
+    <color name="oppi_text_primary">#1B1F3B</color>
+    <color name="oppi_text_secondary">#6B7190</color>
+</resources>
