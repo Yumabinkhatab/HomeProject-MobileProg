@@ -2,19 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/oppi_bg"
-    tools:context=".MainActivity">
+    tools:context=".Home.HomeFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/oppi_bg"
+        android:background="@color/oppi_yellow"
+        app:elevation="2dp"
+        app:titleTextAppearance="@style/TextAppearance.Oppi.Toolbar.Title"
         app:titleTextColor="@color/oppi_text_primary"
-        app:subtitleTextColor="@color/oppi_text_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

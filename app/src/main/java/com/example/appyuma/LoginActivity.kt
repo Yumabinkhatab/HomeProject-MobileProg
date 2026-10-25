@@ -2,7 +2,6 @@ package com.example.appyuma
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -27,14 +26,6 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.apply {
-            title = "Login"
-            subtitle = "Masuk ke akun Oppi"
-            setDisplayHomeAsUpEnabled(true)
-            setDisplayShowHomeEnabled(true)
-        }
-
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
@@ -46,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                 editor.putString("username", username)
                 editor.apply()
 
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
 
                 finish()
@@ -59,13 +50,5 @@ class LoginActivity : AppCompatActivity() {
                     .show()
             }
         }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
-            onBackPressedDispatcher.onBackPressed()
-            return true
-        }
-        return super.onOptionsItemSelected(item)
     }
 }
