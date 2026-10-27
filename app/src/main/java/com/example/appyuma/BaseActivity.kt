@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.appyuma.Home.HomeFragment
 import com.example.appyuma.Message.MessageFragment
 import com.example.appyuma.More.MoreFragment
+import com.example.appyuma.PetaBelajar.PetaBelajarFragment
 import com.example.appyuma.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -31,6 +32,10 @@ class BaseActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> {
                     replaceFragment(HomeFragment())
+                    true
+                }
+                R.id.peta -> {
+                    replaceFragment(PetaBelajarFragment())
                     true
                 }
                 R.id.message -> {

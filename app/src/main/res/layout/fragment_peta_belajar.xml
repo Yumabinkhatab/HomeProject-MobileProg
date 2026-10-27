@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/oppi_bg"
+    tools:context=".PetaBelajar.PetaBelajarFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/oppi_yellow"
+        app:elevation="0dp"
+        app:titleTextAppearance="@style/TextAppearance.Oppi.Toolbar.Title"
+        app:titleTextColor="@color/oppi_text_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/svPeta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:id="@+id/ivWaveHeader"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:importantForAccessibility="no"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_header_wave_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvSummary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/oppi_primary"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="6dp"
+                app:strokeWidth="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tvSummaryLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Peta Belajar · Matematika"
+                        android:textColor="@color/oppi_lavender"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvSummaryValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="2 dari 6 Topik Selesai"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/pbSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:progress="33"
+                        app:indicatorColor="@color/white"
+                        app:trackColor="@color/oppi_primary_dark"
+                        app:trackCornerRadius="4dp"
+                        app:trackThickness="8dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvChipLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Pilih mata pelajaran"
+                android:textColor="@color/oppi_text_primary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvSummary" />
+
+            <HorizontalScrollView
+                android:id="@+id/hsvChip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvChipLabel">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupMapel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:checkedChip="@id/chipMatematika"
+                    app:selectionRequired="true"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMatematika"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Matematika"
+                        android:textColor="@color/chip_text_color"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@color/chip_bg_color"
+                        app:chipCornerRadius="16dp"
+                        app:chipStrokeWidth="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipLiterasi"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Literasi"
+                        android:textColor="@color/chip_text_color"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@color/chip_bg_color"
+                        app:chipCornerRadius="16dp"
+                        app:chipStrokeWidth="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSains"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sains"
+                        android:textColor="@color/chip_text_color"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@color/chip_bg_color"
+                        app:chipCornerRadius="16dp"
+                        app:chipStrokeWidth="0dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipUtbk"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Persiapan UTBK"
+                        android:textColor="@color/chip_text_color"
+                        app:checkedIconVisible="false"
+                        app:chipBackgroundColor="@color/chip_bg_color"
+                        app:chipCornerRadius="16dp"
+                        app:chipStrokeWidth="0dp" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tvGridLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Topik belajar"
+                android:textColor="@color/oppi_text_primary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hsvChip" />
+
+            <GridLayout
+                android:id="@+id/gridTopik"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="14dp"
+                android:columnCount="2"
+                android:rowCount="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGridLabel">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTopik1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/oppi_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvIcon1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="26sp" />
+
+                        <TextView
+                            android:id="@+id/tvJudul1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:textColor="@color/oppi_text_primary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTopik2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/oppi_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvIcon2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="26sp" />
+
+                        <TextView
+                            android:id="@+id/tvJudul2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:textColor="@color/oppi_text_primary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTopik3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/oppi_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvIcon3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="26sp" />
+
+                        <TextView
+                            android:id="@+id/tvJudul3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:textColor="@color/oppi_text_primary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTopik4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/oppi_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvIcon4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="26sp" />
+
+                        <TextView
+                            android:id="@+id/tvJudul4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:textColor="@color/oppi_text_primary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTopik5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/oppi_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvIcon5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="26sp" />
+
+                        <TextView
+                            android:id="@+id/tvJudul5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:textColor="@color/oppi_text_primary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvTopik6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/oppi_border"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvIcon6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="26sp" />
+
+                        <TextView
+                            android:id="@+id/tvJudul6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:textColor="@color/oppi_text_primary"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tvStatus6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

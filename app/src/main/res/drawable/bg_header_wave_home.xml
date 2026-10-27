@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="70dp"
+    android:viewportWidth="360"
+    android:viewportHeight="70">
+
+    <path
+        android:fillColor="@color/oppi_peach"
+        android:pathData="M 0,0 L 360,0 L 360,42 C 270,72 180,24 0,56 Z" />
+
+    <path
+        android:fillColor="@color/oppi_yellow"
+        android:pathData="M 0,0 L 360,0 L 360,26 C 250,62 120,8 0,36 Z" />
+
+</vector>
+

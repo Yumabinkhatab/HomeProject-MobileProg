@@ -4,13 +4,20 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.example.appyuma.DetailActivity
 import com.example.appyuma.LoginActivity
+import com.example.appyuma.Message.tutorial.TutorialMessageActivity
+import com.example.appyuma.R
 import com.example.appyuma.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -37,6 +44,22 @@ class HomeFragment : Fragment() {
             setDisplayHomeAsUpEnabled(false)
             setDisplayShowHomeEnabled(false)
         }
+
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.home_toolbar_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.action_tutorial_home -> {
+                        startActivity(Intent(requireContext(), TutorialMessageActivity::class.java))
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
         val username = sharedPref.getString("username", "Pengguna")

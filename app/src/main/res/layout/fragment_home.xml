@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/oppi_yellow"
-        app:elevation="2dp"
+        app:elevation="0dp"
         app:titleTextAppearance="@style/TextAppearance.Oppi.Toolbar.Title"
         app:titleTextColor="@color/oppi_text_primary"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,18 +32,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="20dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="20dp"
             android:paddingBottom="24dp">
 
-            <TextView
-                android:id="@+id/tvGreetingSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Selamat belajar,"
-                android:textColor="@color/oppi_text_secondary"
-                android:textSize="13sp"
+            <ImageView
+                android:id="@+id/ivWaveHeader"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:scaleType="fitXY"
+                android:importantForAccessibility="no"
+                android:src="@drawable/bg_header_wave_home"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,6 +49,8 @@
                 android:id="@+id/tvWelcomeUser"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:fontFamily="sans-serif-black"
                 android:text="Halo, Pengguna"
@@ -58,19 +58,20 @@
                 android:textSize="22sp"
                 app:layout_constraintEnd_toStartOf="@id/cvStreak"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvGreetingSmall" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvStreak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/oppi_cream"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp"
                 app:strokeWidth="0dp"
                 app:layout_constraintBottom_toBottomOf="@id/tvWelcomeUser"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvGreetingSmall">
+                app:layout_constraintTop_toTopOf="@id/tvWelcomeUser">
 
                 <TextView
                     android:id="@+id/tvStreak"
@@ -91,7 +92,9 @@
                 android:id="@+id/cvTarget"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/oppi_primary"
                 app:cardCornerRadius="24dp"
                 app:cardElevation="6dp"
@@ -151,6 +154,7 @@
                 android:id="@+id/tvSectionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Lanjutkan belajar"
@@ -163,7 +167,9 @@
                 android:id="@+id/cvProjectCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/oppi_card"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
@@ -262,7 +268,9 @@
                 android:id="@+id/cvTips"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/oppi_mint"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
@@ -288,7 +296,9 @@
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="28dp"
+                android:layout_marginEnd="20dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="Logout"
                 android:textAllCaps="false"
