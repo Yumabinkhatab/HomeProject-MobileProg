@@ -18,6 +18,7 @@ import com.example.appyuma.DetailActivity
 import com.example.appyuma.LoginActivity
 import com.example.appyuma.Message.tutorial.TutorialMessageActivity
 import com.example.appyuma.R
+import com.example.appyuma.WebViewActivity
 import com.example.appyuma.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -72,6 +73,16 @@ class HomeFragment : Fragment() {
 
         binding.cvProjectCard.setOnClickListener {
             val intent = Intent(requireContext(), DetailActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnOpenSnpmb.setOnClickListener {
+            val intent = Intent(requireContext(), WebViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.cvSnpmbPortal.setOnClickListener {
+            val intent = Intent(requireContext(), WebViewActivity::class.java)
             startActivity(intent)
         }
 
