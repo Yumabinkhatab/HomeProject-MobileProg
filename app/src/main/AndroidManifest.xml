@@ -46,5 +46,10 @@
             android:name=".WebViewActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".Note.NoteFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 </manifest>

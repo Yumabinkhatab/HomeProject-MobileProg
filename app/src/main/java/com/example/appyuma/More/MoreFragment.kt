@@ -57,6 +57,10 @@ class MoreFragment : Fragment() {
                     badge.isVisible = true
                     badge.number = 3
                 }
+                3 -> {
+                    tab.text = "Catatan"
+                    tab.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_notes)
+                }
             }
         }.attach()
     }

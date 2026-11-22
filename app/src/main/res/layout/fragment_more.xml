@@ -29,6 +29,8 @@
         app:tabIndicatorFullWidth="false"
         app:tabIndicatorHeight="4dp"
         app:tabMode="fixed"
+        app:tabPaddingEnd="4dp"
+        app:tabPaddingStart="4dp"
         app:tabSelectedTextColor="@color/oppi_primary"
         app:tabTextColor="@color/oppi_text_secondary"
         app:layout_constraintEnd_toEndOf="parent"
