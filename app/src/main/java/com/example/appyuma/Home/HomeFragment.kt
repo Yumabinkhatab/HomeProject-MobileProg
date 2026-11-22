@@ -67,23 +67,19 @@ class HomeFragment : Fragment() {
         binding.tvWelcomeUser.text = "Halo, $username"
 
         binding.btnViewDetail.setOnClickListener {
-            val intent = Intent(requireContext(), DetailActivity::class.java)
-            startActivity(intent)
+            openPersamaanLinearDetail()
         }
 
         binding.cvProjectCard.setOnClickListener {
-            val intent = Intent(requireContext(), DetailActivity::class.java)
-            startActivity(intent)
+            openPersamaanLinearDetail()
         }
 
         binding.btnOpenSnpmb.setOnClickListener {
-            val intent = Intent(requireContext(), WebViewActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
 
         binding.cvSnpmbPortal.setOnClickListener {
-            val intent = Intent(requireContext(), WebViewActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(requireContext(), WebViewActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {
@@ -111,6 +107,18 @@ class HomeFragment : Fragment() {
             val alertDialog = builder.create()
             alertDialog.show()
         }
+    }
+
+    private fun openPersamaanLinearDetail() {
+        val intent = DetailActivity.createIntent(
+            context = requireContext(),
+            title = "Persamaan Linear",
+            subtitle = "Matematika · Kelas 11 · Progres 45%",
+            category = "Matematika · Sedang Dipelajari",
+            description = "Persamaan linear adalah persamaan aljabar di mana setiap suku hanya mengandung konstanta atau perkalian konstanta dengan variabel berpangkat satu. Materi ini sering muncul pada soal Pengetahuan Kuantitatif dan Penalaran Matematika UTBK.",
+            points = "Poin Penting Materi:\n• Bentuk umum 1 variabel: ax + b = 0 -> x = -b/a\n• Bentuk umum 2 variabel (SPLDV): ax + by = c\n• Metode penyelesaian: substitusi, eliminasi, dan grafik\n• Latihan harian: selesaikan 5 soal cerita SPLDV"
+        )
+        startActivity(intent)
     }
 
     override fun onDestroyView() {

@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SimpleAdapter
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.appyuma.DetailActivity
 import com.example.appyuma.R
 import com.example.appyuma.databinding.FragmentTabMateriBinding
 
@@ -51,13 +51,17 @@ class TabMateriFragment : Fragment() {
 
         binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = dataListWithDesc[position]
-            val title = selectedItem["title"]
-            val desc = selectedItem["desc"]
-            Toast.makeText(
-                requireContext(),
-                "Kamu memilih: $title ($desc)",
-                Toast.LENGTH_SHORT
-            ).show()
+            val title = selectedItem["title"] ?: ""
+            val desc = selectedItem["desc"] ?: ""
+            val intent = DetailActivity.createIntent(
+                context = requireContext(),
+                title = title,
+                subtitle = "Mata Pelajaran SMA & Subtes UTBK",
+                category = "Daftar Materi",
+                description = desc,
+                points = "Rekomendasi Belajar:\n• Pelajari konsep inti pada Peta Belajar\n• Baca modul ringkas terkait di tab Modul\n• Simpan rangkuman pribadi ke tab Catatan"
+            )
+            startActivity(intent)
         }
     }
 
@@ -66,4 +70,3 @@ class TabMateriFragment : Fragment() {
         _binding = null
     }
 }
-

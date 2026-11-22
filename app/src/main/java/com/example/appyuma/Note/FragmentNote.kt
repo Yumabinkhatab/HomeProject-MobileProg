@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.appyuma.More.MoreFragment
 import com.example.appyuma.data.AppDatabase
 import com.example.appyuma.data.entity.NoteEntity
 import com.example.appyuma.databinding.FragmentNoteBinding
@@ -69,6 +70,7 @@ class FragmentNote : Fragment() {
             notes.addAll(result)
             adapter.notifyDataSetChanged()
             binding.tvEmptyNotes.visibility = if (notes.isEmpty()) View.VISIBLE else View.GONE
+            (parentFragment as? MoreFragment)?.updateNoteBadge(notes.size)
         }
     }
 

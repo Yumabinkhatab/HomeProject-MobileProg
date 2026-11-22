@@ -1,49 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/oppi_bg"
-    android:padding="20dp">
+    android:fillViewport="true">
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:cardBackgroundColor="@color/oppi_primary"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="4dp"
-        app:strokeWidth="0dp">
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="24dp">
+            app:cardBackgroundColor="@color/oppi_primary"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:text="3 Tips Belajar Efektif Oppi 💡"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="3 Tips Belajar Efektif Oppi 💡"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="1. Gunakan metode Micro-Learning 5–10 menit setiap hari agar fokus terjaga.\n2. Kerjakan latihan soal bertahap sesuai Peta Belajar adaptifmu.\n3. Catat poin penting di tab Catatan dan jaga Streak harian bersama teman."
+                    android:textColor="@color/oppi_lavender"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/oppi_card"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/oppi_border"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:gravity="center"
-                android:lineSpacingExtra="4dp"
-                android:text="1. Gunakan metode Micro-Learning 5–10 menit setiap hari agar fokus terjaga.\n2. Kerjakan latihan soal bertahap sesuai Peta Belajar adaptifmu.\n3. Pertahankan Streak harian dan diskusi bersama teman di Studi Bareng."
-                android:textColor="@color/oppi_lavender"
-                android:textSize="14sp" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Tentang Aplikasi Oppi"
+                    android:textColor="@color/oppi_text_primary"
+                    android:textSize="17sp" />
 
-    </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Oppi adalah teman belajar adaptif untuk pelajar SMA/SMK dan persiapan UTBK-SNBT dengan fitur Peta Belajar, Modul Baca gratis, Portal SNPMB, Studi Bareng, serta Catatan Belajar lokal."
+                    android:textColor="@color/oppi_text_secondary"
+                    android:textSize="13sp" />
 
-</FrameLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAboutDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/oppi_lavender"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Lihat Info Lengkap Oppi"
+                    android:textAllCaps="false"
+                    android:textColor="@color/oppi_primary"
+                    app:cornerRadius="24dp" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOpenTutorial"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Buka Panduan Aplikasi"
+                    android:textAllCaps="false"
+                    android:textColor="@color/oppi_primary"
+                    app:cornerRadius="24dp"
+                    app:strokeColor="@color/oppi_primary"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.appyuma.R
 import com.example.appyuma.databinding.ItemModulBinding
 
 class ModulAdapter(
@@ -28,6 +29,8 @@ class ModulAdapter(
             tvModulInfo.text = item.info
             Glide.with(holder.itemView.context)
                 .load(item.imageUrl)
+                .placeholder(R.drawable.ic_book)
+                .error(R.drawable.ic_book)
                 .into(imgModul)
             root.setOnClickListener { onItemClick(item) }
         }

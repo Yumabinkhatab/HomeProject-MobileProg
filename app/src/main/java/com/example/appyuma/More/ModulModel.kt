@@ -3,5 +3,7 @@ package com.example.appyuma.More
 data class ModulModel(
     val name: String,
     val info: String,
-    val imageUrl: String
+    val imageUrl: String,
+    val summary: String,
+    val points: String
 )

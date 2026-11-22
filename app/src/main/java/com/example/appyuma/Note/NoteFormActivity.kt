@@ -48,6 +48,10 @@ class NoteFormActivity : AppCompatActivity() {
             binding.etTitle.setText(intent.getStringExtra(EXTRA_NOTE_TITLE) ?: "")
             binding.etContent.setText(intent.getStringExtra(EXTRA_NOTE_CONTENT) ?: "")
             binding.btnSaveNote.text = "Simpan Perubahan"
+        } else {
+            intent.getStringExtra(EXTRA_NOTE_TITLE)?.let {
+                binding.etTitle.setText(it)
+            }
         }
 
         binding.btnSaveNote.setOnClickListener {
