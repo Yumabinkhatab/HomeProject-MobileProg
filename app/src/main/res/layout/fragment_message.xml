@@ -12,12 +12,23 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/oppi_yellow"
-        app:elevation="2dp"
+        app:elevation="0dp"
         app:titleTextAppearance="@style/TextAppearance.Oppi.Toolbar.Title"
         app:titleTextColor="@color/oppi_text_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivWaveHeader"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_header_wave_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvStudyGroup"

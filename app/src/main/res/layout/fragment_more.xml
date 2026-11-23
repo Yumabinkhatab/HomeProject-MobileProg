@@ -12,12 +12,24 @@
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/oppi_yellow"
-        app:elevation="2dp"
+        app:elevation="0dp"
         app:titleTextAppearance="@style/TextAppearance.Oppi.Toolbar.Title"
         app:titleTextColor="@color/oppi_text_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivWaveHeader"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@color/oppi_card"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_header_wave_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -35,7 +47,7 @@
         app:tabTextColor="@color/oppi_text_secondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/ivWaveHeader" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
